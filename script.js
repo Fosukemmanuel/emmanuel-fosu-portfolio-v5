@@ -120,6 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     form.addEventListener('submit', (e) => {
+      e.preventDefault(); // always handle submission ourselves via fetch
+
       const fields = form.querySelectorAll('input[required], textarea[required]');
       let allValid = true;
 
@@ -128,15 +130,38 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if(!allValid){
-        e.preventDefault();
         status.textContent = 'Please fix the highlighted fields before sending.';
         status.style.color = '#C0392B';
         return;
       }
 
-      // Let Netlify Forms handle the actual submission (static hosting, no backend).
       status.textContent = 'Sending…';
       status.style.color = '';
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if(submitBtn) submitBtn.disabled = true;
+
+      const data = new URLSearchParams(new FormData(form)).toString();
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: data
+      })
+        .then((res) => {
+          if(!res.ok) throw new Error('Network response was not ok');
+          status.textContent = "Thanks! Your message has been sent — I'll get back to you soon.";
+          status.style.color = '#1E7145';
+          form.reset();
+        })
+        .catch((err) => {
+          console.error('Form submission error:', err);
+          status.textContent = 'Something went wrong. Please email me directly at fosukemmanuel@gmail.com.';
+          status.style.color = '#C0392B';
+        })
+        .finally(() => {
+          if(submitBtn) submitBtn.disabled = false;
+        });
     });
 
     form.querySelectorAll('input, textarea').forEach(field => {
