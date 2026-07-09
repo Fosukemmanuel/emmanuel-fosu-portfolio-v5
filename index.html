@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emmanuel Fosu | IT Specialist &amp; Educator — Home</title>
+<meta name="description" content="Emmanuel Fosu — Information Technology Specialist, Web Developer, Networking Enthusiast, and Computing Educator.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="Emmanuel Fosu Logo" class="logo-img">
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <a href="index.html" class="nav-link active" aria-current="page">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="nav-controls">
+      <div class="nav-cv-icons">
+        <a href="assets/cv/Emmanuel_Fosu_IT_CV.pdf" target="_blank" rel="noopener" class="nav-cv-btn-icon" title="View Information Technology CV" aria-label="View Information Technology CV">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M12 18v-6M9 15l3 3 3-3"/></svg>
+        </a>
+        <a href="assets/cv/Emmanuel_Fosu_Teaching_CV.pdf" target="_blank" rel="noopener" class="nav-cv-btn-icon" title="View Teaching CV" aria-label="View Teaching CV">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg>
+        </a>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle light / dark mode">
+        <svg id="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg id="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile">
+    <a href="index.html" class="nav-link active" aria-current="page">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="projects.html" class="nav-link">Projects</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    <div class="mobile-cv-group">
+      <a href="assets/cv/Emmanuel_Fosu_IT_CV.pdf" target="_blank" rel="noopener" class="nav-cv-btn">View Information Technology CV</a>
+      <a href="assets/cv/Emmanuel_Fosu_Teaching_CV.pdf" target="_blank" rel="noopener" class="nav-cv-btn">View Teaching CV</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="hero">
+    <canvas id="node-canvas"></canvas>
+    <div class="hero-inner">
+      <p class="eyebrow mono">Information Technology Specialist</p>
+      <h1 class="hero-name">Emmanuel Fosu</h1>
+      <div class="electron-orbit" aria-hidden="false">
+        <svg class="orbit-svg" viewBox="0 0 560 560" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <path id="loopPath" class="orbit-line orbit-line-loop" d="M280,60 L489.24,212.02 L409.32,457.98 L150.68,457.98 L70.76,212.02 Z"/>
+          <path id="diag1" class="orbit-line orbit-line-diag" d="M280,60 L280,280"/>
+          <path id="diag2" class="orbit-line orbit-line-diag" d="M489.24,212.02 L280,280"/>
+          <path id="diag3" class="orbit-line orbit-line-diag" d="M409.32,457.98 L280,280"/>
+          <path id="diag4" class="orbit-line orbit-line-diag" d="M150.68,457.98 L280,280"/>
+          <path id="diag5" class="orbit-line orbit-line-diag" d="M70.76,212.02 L280,280"/>
+
+          <circle class="electron electron-loop" r="5">
+            <animateMotion dur="7s" repeatCount="indefinite">
+              <mpath href="#loopPath" xlink:href="#loopPath"/>
+            </animateMotion>
+          </circle>
+          <circle class="electron electron-loop" r="4">
+            <animateMotion dur="7s" repeatCount="indefinite" begin="3.5s">
+              <mpath href="#loopPath" xlink:href="#loopPath"/>
+            </animateMotion>
+          </circle>
+
+          <circle class="electron electron-diag" r="4">
+            <animateMotion dur="2.6s" repeatCount="indefinite" keyPoints="0;1;0" keyTimes="0;0.5;1" calcMode="linear" begin="0s">
+              <mpath href="#diag1" xlink:href="#diag1"/>
+            </animateMotion>
+          </circle>
+          <circle class="electron electron-diag" r="4">
+            <animateMotion dur="2.6s" repeatCount="indefinite" keyPoints="0;1;0" keyTimes="0;0.5;1" calcMode="linear" begin="0.5s">
+              <mpath href="#diag2" xlink:href="#diag2"/>
+            </animateMotion>
+          </circle>
+          <circle class="electron electron-diag" r="4">
+            <animateMotion dur="2.6s" repeatCount="indefinite" keyPoints="0;1;0" keyTimes="0;0.5;1" calcMode="linear" begin="1s">
+              <mpath href="#diag3" xlink:href="#diag3"/>
+            </animateMotion>
+          </circle>
+          <circle class="electron electron-diag" r="4">
+            <animateMotion dur="2.6s" repeatCount="indefinite" keyPoints="0;1;0" keyTimes="0;0.5;1" calcMode="linear" begin="1.5s">
+              <mpath href="#diag4" xlink:href="#diag4"/>
+            </animateMotion>
+          </circle>
+          <circle class="electron electron-diag" r="4">
+            <animateMotion dur="2.6s" repeatCount="indefinite" keyPoints="0;1;0" keyTimes="0;0.5;1" calcMode="linear" begin="2s">
+              <mpath href="#diag5" xlink:href="#diag5"/>
+            </animateMotion>
+          </circle>
+        </svg>
+
+        <div class="orbit-center">
+          <img src="images/emma.jpg" alt="Emmanuel Fosu" class="orbit-center-img">
+        </div>
+
+        <div class="orbit-box" style="left:50%; top:10.71%;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg>
+          <span>IT Educator</span>
+        </div>
+        <div class="orbit-box" style="left:87.36%; top:37.86%;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <span>Web Designer</span>
+        </div>
+        <div class="orbit-box" style="left:73.09%; top:81.78%;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-6 4 3 5-8"/></svg>
+          <span>Data Analyst</span>
+        </div>
+        <div class="orbit-box" style="left:26.91%; top:81.78%;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          <span>Networking Enthusiast</span>
+        </div>
+        <div class="orbit-box" style="left:12.64%; top:37.86%;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 011.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+          <span>Graphic Designer</span>
+        </div>
+      </div>
+      <p class="status-badge mono">Currently: MSc IT Student · IT Coordinator @ Nkwantakese D/A JHS</p>
+      <p class="hero-tagline">Web Design &amp; Networking Enthusiast, transforming education through innovative technology and data-driven management.</p>
+      <div class="hero-actions">
+        <a href="projects.html" class="btn btn-primary">View Projects</a>
+        <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+      </div>
+    </div>
+    <a href="about.html" class="scroll-cue" aria-label="Go to About page">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </a>
+  </section>
+
+  <!-- ============ STATS BAR ============ -->
+  <section class="stats-bar" id="stats">
+    <div class="section-inner stats-inner">
+      <div class="stat-item">
+        <span class="stat-number mono">4+</span>
+        <span class="stat-label">Years of Teaching</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number mono">5+</span>
+        <span class="stat-label">Systems Built</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number mono">3</span>
+        <span class="stat-label">Programming Languages</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number mono">300+</span>
+        <span class="stat-label">Students Impacted</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT TEASER ============ -->
+  <section class="about-teaser" id="about-teaser">
+    <div class="section-inner">
+      <p class="section-label mono">01 — About</p>
+      <h2 class="section-title">A Bit About Me</h2>
+      <div class="about-teaser-grid">
+        <p class="about-teaser-text">
+          I work across two professions: as an <strong>IT Specialist &amp; Web Developer</strong> building the systems schools and businesses run on, and as a <strong>Computing Teacher</strong> shaping how the next generation learns to use them. My academic background spans a Diploma in Basic Education through to an ongoing MSc in Information Technology.
+        </p>
+        <p class="philosophy">"I believe in using technology to harness education."</p>
+      </div>
+      <div class="hero-actions" style="justify-content:flex-start; margin-bottom: 6px;">
+        <a href="about.html#it-profession" class="link-arrow">IT &amp; Web Development →</a>
+        <a href="about.html#teaching-profession" class="link-arrow">Teaching &amp; Education →</a>
+      </div>
+      <a href="about.html" class="link-arrow">Read more about me →</a>
+    </div>
+  </section>
+
+  <!-- ============ WHAT I DO ============ -->
+  <section class="services" id="services">
+    <div class="section-inner">
+      <p class="section-label mono">02 — What I Do</p>
+      <h2 class="section-title">Services Snapshot</h2>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+          </div>
+          <h3>Web Development</h3>
+          <p>Building responsive, offline-first web applications with modern front-end and back-end tools — from school portals to full-scale grading systems.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          </div>
+          <h3>Networking &amp; Systems</h3>
+          <p>Designing and administering network architecture and system infrastructure that keeps institutions connected, secure, and running smoothly.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg>
+          </div>
+          <h3>Computing Education</h3>
+          <p>Teaching Computing and designing instructional materials that make technology accessible and engaging for Junior High School learners.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 17V9m6 8v-5M3 21h18M4 21V10l8-6 8 6v11"/></svg>
+          </div>
+          <h3>Instructional Design</h3>
+          <p>Building agile, needs-driven instructional materials and e-learning content with tools like Articulate 360 and Rise, grounded in real classroom data.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED PROJECTS ============ -->
+  <section class="featured-projects" id="featured-projects">
+    <div class="section-inner">
+      <p class="section-label mono">03 — Featured Work</p>
+      <h2 class="section-title">Selected Projects</h2>
+
+      <div class="featured-project-list">
+
+        <article class="project-card">
+          <div class="project-head">
+            <h3>Complete Grading, Reporting &amp; Quizzing System</h3>
+            <div class="tag-row">
+              <span class="tag tag-tech">HTML</span>
+              <span class="tag tag-tech">CSS</span>
+              <span class="tag tag-tech">JavaScript</span>
+              <span class="tag tag-tech">Supabase</span>
+              <span class="tag tag-tech">Firebase</span>
+            </div>
+          </div>
+          <p class="project-goal">A unified cloud-based system for real-time assessment, automated grading, and terminal reporting in basic education.</p>
+        </article>
+
+        <article class="project-card">
+          <div class="project-head">
+            <h3>Nkwanta Kese DA JHS Portal</h3>
+            <div class="tag-row">
+              <span class="tag tag-tech">WordPress</span>
+              <span class="tag tag-tech">Custom Theming</span>
+            </div>
+          </div>
+          <p class="project-goal">An institutional web portal enhancing communication, record-keeping, and digital presence for the school.</p>
+          <a class="project-link" href="https://nkwantakesedajhs.great-site.net" target="_blank" rel="noopener">Visit live site ↗</a>
+        </article>
+
+      </div>
+
+      <a href="projects.html" class="link-arrow">View all projects →</a>
+    </div>
+  </section>
+
+  <!-- ============ CALL TO ACTION ============ -->
+  <section class="cta" id="cta">
+    <div class="section-inner cta-inner">
+      <h2 class="cta-heading">Have a Project in Mind?</h2>
+      <p class="cta-text">Whether it's a school system, a website, or a collaboration on education technology, I'd love to hear about it.</p>
+      <a href="contact.html" class="btn btn-primary">Let's Talk</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <div class="footer-col footer-brand">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Emmanuel Fosu Logo" class="logo-img">
+      </a>
+      <p class="footer-tagline">Information Technology Specialist, Web Developer, and Computing Educator; building systems that make education work better.</p>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/emmanuel.fosu.18041" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.5-3H13.5V8.5c0-.9.25-1.5 1.53-1.5H16.5V4.35C16.2 4.3 15.2 4.2 14 4.2c-2.4 0-4 1.46-4 4.15V10.5H7.5v3H10V21h3.5z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/fosukemmanuel?igsh=NnFtemxhdjh0Y2I2" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/emmanuel-fosu-2341121b7" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@emmanuelfosu51" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82a4.28 4.28 0 0 1-3.14-1.4V4.4h-3.03v13.4a2.5 2.5 0 1 1-2.06-2.46v-3.06a5.56 5.56 0 1 0 5.09 5.53V9.72a7.28 7.28 0 0 0 4.24 1.36V8.05a4.28 4.28 0 0 1-1.1-2.23z"/></svg>
+        </a>
+        <a href="mailto:fosukemmanuel@gmail.com" aria-label="Email">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <path d="M3 7l9 6 9-6"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3 class="footer-heading mono">Navigate</h3>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3 class="footer-heading mono">Contact</h3>
+      <ul class="footer-links">
+        <li class="email-row">
+          <a href="mailto:fosukemmanuel@gmail.com">fosukemmanuel@gmail.com</a>
+          <button type="button" class="copy-btn" data-email="fosukemmanuel@gmail.com" aria-label="Copy email address" title="Copy email">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          </button>
+          <span class="copy-feedback" aria-live="polite"></span>
+        </li>
+        <li><a href="https://www.facebook.com/emmanuel.fosu.18041" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.instagram.com/fosukemmanuel?igsh=NnFtemxhdjh0Y2I2" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/in/emmanuel-fosu-2341121b7" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.tiktok.com/@emmanuelfosu51" target="_blank" rel="noopener">TikTok</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3 class="footer-heading mono">Based In</h3>
+      <p class="footer-text">Ashanti Region, Ghana</p>
+      <p class="footer-text">Available for freelance &amp; collaboration</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> Emmanuel Fosu. Educator, Web Developer, &amp; Network engineering Enthusiast.</p>
+    <a href="index.html#hero" class="back-to-top">Back to top ↑</a>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
