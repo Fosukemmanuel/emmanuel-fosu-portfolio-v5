@@ -57,17 +57,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ============ COPY EMAIL TO CLIPBOARD - FIXED ============ */
+  /* ============ COPY EMAIL TO CLIPBOARD ============ */
   document.querySelectorAll('.copy-btn').forEach(btn => {
     btn.addEventListener('click', async (e) => {
-      // REMOVED e.preventDefault() and e.stopPropagation()
-      // This allows the mailto link to work while still copying
-      
       const email = btn.getAttribute('data-email');
       const feedback = btn.parentElement.querySelector('.copy-feedback');
-      
+
       if (!email) return;
-      
+
       try {
         await navigator.clipboard.writeText(email);
         if (feedback) {
@@ -76,16 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
           setTimeout(() => feedback.classList.remove('show'), 1800);
         }
       } catch (err) {
-        // Fallback for browsers that don't support clipboard API
         try {
-          // Create a temporary input element for fallback
           const tempInput = document.createElement('input');
           tempInput.value = email;
           document.body.appendChild(tempInput);
           tempInput.select();
           document.execCommand('copy');
           document.body.removeChild(tempInput);
-          
+
           if (feedback) {
             feedback.textContent = 'Copied!';
             feedback.classList.add('show');
@@ -102,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ============ CONTACT FORM VALIDATION ============ */
+  /* ============ CONTACT FORM VALIDATION + NETLIFY SUBMISSION ============ */
   const form = document.getElementById('contact-form');
 
   if(form){
@@ -119,8 +114,20 @@ document.addEventListener('DOMContentLoaded', () => {
       return valid;
     }
 
+    // Build a reliable urlencoded body manually instead of relying on
+    // `new URLSearchParams(new FormData(form))`, which some browsers
+    // (older Safari in particular) do not support consistently.
+    function encodeFormData(formEl){
+      const formData = new FormData(formEl);
+      const params = new URLSearchParams();
+      formData.forEach((value, key) => {
+        params.append(key, value);
+      });
+      return params.toString();
+    }
+
     form.addEventListener('submit', (e) => {
-      e.preventDefault(); // always handle submission ourselves via fetch
+      e.preventDefault(); // handle submission ourselves via fetch
 
       const fields = form.querySelectorAll('input[required], textarea[required]');
       let allValid = true;
@@ -141,23 +148,35 @@ document.addEventListener('DOMContentLoaded', () => {
       const submitBtn = form.querySelector('button[type="submit"]');
       if(submitBtn) submitBtn.disabled = true;
 
-      const data = new URLSearchParams(new FormData(form)).toString();
+      const body = encodeFormData(form);
 
       fetch('/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: data
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Accept': 'application/x-www-form-urlencoded'
+        },
+        body: body
       })
         .then((res) => {
-          if(!res.ok) throw new Error('Network response was not ok');
+          if(!res.ok) throw new Error('Network response was not ok (status ' + res.status + ')');
           status.textContent = "Thanks! Your message has been sent — I'll get back to you soon.";
           status.style.color = '#1E7145';
           form.reset();
         })
         .catch((err) => {
           console.error('Form submission error:', err);
-          status.textContent = 'Something went wrong. Please email me directly at fosukemmanuel@gmail.com.';
+          // Fallback: if the AJAX POST fails for any reason (blocked by an
+          // extension, network hiccup, etc.), fall back to a normal, native
+          // form submission so the browser handles it directly instead of
+          // the user losing their message entirely.
+          // HTMLFormElement.prototype.submit.call() bypasses any JS submit
+          // listeners (including this one), so it won't loop back into fetch.
+          status.textContent = 'Having trouble sending automatically — submitting the standard way…';
           status.style.color = '#C0392B';
+          setTimeout(() => {
+            HTMLFormElement.prototype.submit.call(form);
+          }, 1200);
         })
         .finally(() => {
           if(submitBtn) submitBtn.disabled = false;
